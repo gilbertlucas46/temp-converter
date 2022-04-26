@@ -12,12 +12,12 @@ const pageStyles = {
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-     <Helmet title="Temperature Converter" defer={false} />
-     <Layout>
+    <>
+      <Helmet title="Temperature Converter" defer={false} />
+      <Layout>
         test
-     </Layout>
-    </main>
+      </Layout>
+    </>
   )
 }
 

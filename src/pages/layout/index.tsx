@@ -1,5 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import styled from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -37,9 +38,10 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
-  .container {
+  main {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+    margin: auto;
     @media (min-width: 576px) {
       max-width: 540px;
       padding: 0 15px;
@@ -63,16 +65,18 @@ type Props = {
     children: any,
 };
 
+const Main = styled.main``;
+
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <Main>
         <GlobalStyle theme="" />
         {/*Header*/}
 
         {children}
 
         {/*Footer*/}
-    </>
+    </Main>
   )
 }
 
