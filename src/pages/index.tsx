@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Helmet} from "react-helmet";
+import Layout from "./layout";
 
 // styles
 const pageStyles = {
@@ -13,7 +14,9 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
      <Helmet title="Temperature Converter" defer={false} />
-     
+     <Layout>
+        test
+     </Layout>
     </main>
   )
 }
