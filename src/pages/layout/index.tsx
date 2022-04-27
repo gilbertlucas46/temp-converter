@@ -42,19 +42,24 @@ const GlobalStyle = createGlobalStyle`
     padding-right: 1.5rem;
     padding-left: 1.5rem;
     margin: auto;
+
     @media (min-width: 576px) {
       max-width: 540px;
       padding: 0 15px;
     }
+
     @media (min-width: 768px) {
       max-width: 720px;
     }
+
     @media (min-width: 992px) {
       max-width: 960px;
     }
+
     @media (min-width: 1200px) {
       max-width: 1140px;
     }
+
     @media (min-width: 1400px) {
       max-width: 1320px;
     }
@@ -68,16 +73,16 @@ type Props = {
 const Main = styled.main``;
 
 const Layout = ({ children }: Props) => {
-  return (
-    <Main>
+    return (
+      <Main>
         <GlobalStyle theme="" />
         {/*Header*/}
 
         {children}
 
         {/*Footer*/}
-    </Main>
-  )
+      </Main>
+    )
 }
 
 export default Layout
