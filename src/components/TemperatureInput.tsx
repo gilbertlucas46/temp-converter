@@ -6,9 +6,12 @@ type Props = {
     onChange:(text: React.ChangeEvent<HTMLInputElement>) => void
 };
 
+type scaleNames = {
+    [key: string]: string
+}
 
 export const TemperatureInput = ({scale, value, onChange}: Props) => {
-    const scaleNames = {
+    const scaleNames: scaleNames = {
         c: 'Celsius',
         f: 'Fahrenheit'
     };
