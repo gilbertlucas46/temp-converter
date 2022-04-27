@@ -1,24 +1,37 @@
-import React, { useState, Dispatch  } from "react";
+import React, { useState } from "react";
 import {Helmet} from "react-helmet"; // To modify head on each pages
 import Layout from "./layout";
-import styled from 'styled-components';
 import { TemperatureInput } from "../components/TemperatureInput";
 import { TempZones } from "../components/TempZones";
 
-
 const IndexPage = () => {
-  const [celsius, setCelsius] = useState<string>("");
-  const [fahrenheit, setFahrenheit] = useState<string>("");
+
+  const [state, setState] = useState({scale: '',value: ''});
 
   const handleCelsiusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setCelsius(value);
+    const { value } = event.target;
+    setState({scale: 'c', value});
   }
 
   const handleFahrenheitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setFahrenheit(value)
+    const { value } = event.target;
+    setState({scale: 'f', value});
   }
+
+  const toCelsius = (fahrenheit: number) => (fahrenheit - 32) * 5 / 9;
+  const toFahrenheit = (celsius: number) => (celsius * 9 / 5) + 32;
+  const Convert  = (value: string, convert: (temperature: number) => number) => {
+    const input = parseFloat(value);
+    if (Number.isNaN(input)) return '';
+    const output = convert(input);
+    const rounded = Math.round(output * 1000) / 1000;
+    return rounded.toString();
+  }
+
+  const scale = state.scale;
+  const value = state.value;
+  const celsius = scale === 'f' ? Convert(value, toCelsius) : value;
+  const fahrenheit = scale === 'c' ? Convert(value, toFahrenheit) : value;
 
   return (
     <>
