@@ -32,7 +32,6 @@ const ArrowWrapper = styled.div`
 `;
 
 export const ArrowDirection = ({direction}: Props) => {
-        
     return (
         <ArrowWrapper>
             {direction === "up" ? <BiUpArrowAlt/> : <BiDownArrowAlt/>}

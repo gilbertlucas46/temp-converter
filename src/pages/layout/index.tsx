@@ -2,7 +2,7 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 import styled from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<ITheme>`
     html {
     --white: #fff;
     --gray: #6c757d;
@@ -83,16 +83,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-type Props = {
-    children: any,
+const Main = styled.main``;
+
+type Props = {	
+	children: any,
 };
 
-const Main = styled.main``;
+interface ITheme {
+	theme: {
+		body: string
+		text: string
+	};
+};
 
 const Layout = ({ children }: Props) => {
     return (
       <Main>
-        <GlobalStyle theme="" />
+        <GlobalStyle/>
         {/*Header*/}
 
         {children}

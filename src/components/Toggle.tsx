@@ -4,7 +4,18 @@ import styled from 'styled-components';
 import { IoIosCloudyNight } from 'react-icons/io';
 import { WiDayCloudy } from 'react-icons/wi';
 
-const ToggleContainer = styled.button`
+interface IToggleProps {
+    gradient?: string;
+    toggleBorder?: string;
+    lightTheme?: boolean;
+}
+
+export interface IThemeProps {
+    theme?: string | (() => void);
+    toggleTheme?: any;
+}
+
+const ToggleContainer = styled.button<IToggleProps>`
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -39,7 +50,7 @@ const ToggleContainer = styled.button`
     }
 `;
   
-export const Toggle = ({ theme, toggleTheme }) => {
+export const Toggle = ({ theme, toggleTheme }: IThemeProps) => {
     const isLight = theme === 'light';
     return (
         <ToggleContainer lightTheme={isLight} onClick={toggleTheme}>
