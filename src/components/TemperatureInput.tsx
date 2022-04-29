@@ -69,7 +69,7 @@ export const TemperatureInput = ({scale, value, width, onChange}: Props) => {
                     id="focusedInputed" 
                     type="number"
                     value={value}
-                    style={{ width: width + 3 +'ch'}} // (ch) Character unit to auto adjust width + 3ch offset
+                    style={{ width: width + 4 +'ch'}} // (ch) Character unit to auto adjust width + 4ch offset
                     onChange={onChange} 
                 />
             </div>
