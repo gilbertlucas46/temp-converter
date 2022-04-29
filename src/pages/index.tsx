@@ -36,7 +36,6 @@ const darkTheme = {
 const IndexPage = () => {
     const [state, setState] = useState({scale: '', value: '', width: 4});
     const [direction, setDirection] = useState("up");
-
   
     const handleCelsiusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
