@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import { IoIosCloudyNight } from 'react-icons/io';
 import { WiDayCloudy } from 'react-icons/wi';
 
-interface IToggleProps {
+type IToggleProps = {
     gradient?: string;
     toggleBorder?: string;
     lightTheme?: boolean;
 }
 
-export interface IThemeProps {
+type IThemeProps = {
     theme?: string | (() => void);
     toggleTheme?: any;
 }

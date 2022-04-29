@@ -35,13 +35,7 @@ const GlobalStyle = createGlobalStyle<ITheme>`
     margin: 0;
     font-size: 1.5rem;
     line-height:2;
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    #wave {
-      path {
-        fill: ${({ theme }) => theme.body};
-      }
-    }
+    
   }
   html, body {
     height: 100%;
@@ -53,7 +47,11 @@ const GlobalStyle = createGlobalStyle<ITheme>`
       text-decoration: underline;
     }
   }
-  main {
+`
+
+const Main = styled.main`
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
     .container {
       padding-right: 1.5rem;
       padding-left: 1.5rem;
@@ -80,10 +78,12 @@ const GlobalStyle = createGlobalStyle<ITheme>`
         max-width: 1320px;
       }
     }
-  }
-`
-
-const Main = styled.main``;
+    #wave {
+      path {
+        fill: ${({ theme }) => theme.body};
+      }
+    }
+`;
 
 type Props = {	
 	children: any,
@@ -99,7 +99,7 @@ interface ITheme {
 const Layout = ({ children }: Props) => {
     return (
       <Main>
-        <GlobalStyle/>
+        <GlobalStyle />
         {/*Header*/}
 
         {children}
