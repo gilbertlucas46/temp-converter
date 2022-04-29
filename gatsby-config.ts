@@ -12,8 +12,18 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /src/ // See below to configure properly
+          include: /src/
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `inter`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     }
   ]

@@ -1,42 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-const Form = styled.div`
-    height: 100%;
-    .form-group {
-        height: 100%;
-        position: relative;
-        &:before {
-            content: '';
-        }
-        h3 {
-            margin: 0;
-        }
-    }
-    input {
-        min-width: 2ch;
-        padding: 0;
-        font-size: 32px;
-        border: 0;
-        border-bottom: 1px solid #000;
-        &:focus-visible {
-            outline: none;
-        }
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-    /* Firefox */
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
-`;
+import FormStyles from '../components/styles/FormStyles.js'
 
 const Wrapper = styled.div`
     flex: 1;
+    input {
+      color: ${({ theme }) => theme.text};
+      border-bottom: 2px solid ${({ theme }) => theme.text};
+      font-weight: 700;
+    }
     &.last-form {
         z-index: 12;
     }
@@ -52,6 +24,17 @@ const Wrapper = styled.div`
         }
         &:before {
             content: '';
+             /* ff 3.6+ */
+             background:-moz-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.03) 24%, rgba(255, 255, 255, 0) 38%); 
+            /* safari 5.1+,chrome 10+ */
+            background:-webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.03) 24%, rgba(255, 255, 255, 0) 38%);
+            /* opera 11.10+ */
+            background:-o-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.03) 24%, rgba(255, 255, 255, 0) 38%);
+            /* ie 6-9 */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FFFFFF', GradientType=1 );
+            /* ie 10+ */
+            background:-ms-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.03) 24%, rgba(255, 255, 255, 0) 38%);
+            /* global 94%+ browsers support */
             background:linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.03) 24%, rgba(255, 255, 255, 0) 38%);
         }
     }
@@ -77,21 +60,20 @@ export const TemperatureInput = ({scale, value, width, onChange}: Props) => {
 
     return (
     <Wrapper className={scale === 'c' ? 'first-form' : "last-form"}>
-        <Form>
+        <FormStyles>
             <div className= "form-group">
                 <label>
-                    <h3>Enter Temperature in {scaleNames[scale]}: </h3>
+                    <h3>In {scaleNames[scale]}</h3>
                 </label>
                 <input
                     id="focusedInputed" 
                     type="number"
-                    autoFocus 
                     value={value}
-                    style={{ width: width +'ch'}}
+                    style={{ width: width + 3 +'ch'}} // (ch) Character unit to auto adjust width + 3ch offset
                     onChange={onChange} 
                 />
             </div>
-        </Form>
+        </FormStyles>
     </Wrapper>
     )
 }

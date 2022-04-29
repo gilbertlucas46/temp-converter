@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
     font-size: 10px;
   }
   *, *:before, *:after {
@@ -30,6 +31,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height:2;
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    #wave {
+      path {
+        fill: ${({ theme }) => theme.body};
+      }
+    }
   }
   html, body {
     height: 100%;
