@@ -52,7 +52,7 @@ There are two Input fields that takes in value and then convers it into specific
 **Fahrenheit to Celsius Conversion**
 [°C] = ([°F] − 32) × 5/9
 
-![enter image description here](https://lh4.googleusercontent.com/oi8EC6f14Jv3BBKcmSMurHcG4hlfSywu5LvFf1gv8X-DT68aoyFk14jY_0_QDyx1P6e03zNapsEfukLhKgAz=w1920-h937-rw)
+![enter image description here](https://i.ibb.co/m8TKwGx/full.png)
 
 
 
