@@ -16,7 +16,11 @@ const GlobalStyle = createGlobalStyle`
     --gray-700: #495057;
     --gray-800: #343a40;
     --gray-900: #212529;
+    --purple-1: #091236;
+    --purple-2: #1E215D;
     --maxWidth: 1280px;
+    --lightTheme: #eff2f9;
+    --darkTheme: #161f3f;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     scroll-behavior: smooth;

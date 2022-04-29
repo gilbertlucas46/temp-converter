@@ -20,17 +20,17 @@ const Main = styled.div`
 `;
 
 const lightTheme = {
-  body: '#e2e2e2',
-  text: '#363537',
-  toggleBorder: '#fff',
-  gradient: 'linear-gradient(#39598A, #79D7ED)',
+  body: 'var(--lightTheme)',
+  text: 'var(--darkTheme)',
+  toggleBorder: 'var(--gray-200)',
+  gradient: 'linear-gradient(var(--gray-700), var(--gray-500))',
 }
 
 const darkTheme = {
-  body: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  gradient: 'linear-gradient(#091236, #1E215D)',
+  body: 'var(--darkTheme)',
+  text: 'var(--lightTheme)',
+  toggleBorder: 'var(--gray-600)',
+  gradient: 'linear-gradient(var(--purple-1), var(--purple-2))',
 }
 
 const IndexPage = () => {
