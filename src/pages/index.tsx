@@ -119,8 +119,6 @@ const IndexPage = () => {
                     value={fahrenheit}
                     theme={theme}
                     onChange={handleFahrenheitChange} />
-                {/*<TempZones
-      celsius={parseFloat(celsius)} />*/} 
                 </TempWrapper>
               </Main>
           </Layout>
