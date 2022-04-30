@@ -39,7 +39,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ### 🧐 Why GatsbyJS?
 1. I'm more used to ReactJS but I don't want to use plain ReactJS because of scalability limitations, so my only options are either GatsbyJS or NextJS. NextJS seems overkill so Gatsby is the right choice.
-2. If I decided to continue this project I may able be to do more on Gatsby that in reagular ReactJS given the following feature (SSR,SSG, GraphQL). and a number for headless CMS to choose from.
+2. If I decided to continue this project I may able be to do more on Gatsby than in regular ReactJS given the following feature (SSR,SSG, GraphQL). and a number for headless CMS to choose from.
 3. Comunity support and maturity of the framework is great!
 
 ##  Temperature Conversion
