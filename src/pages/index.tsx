@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Helmet} from "react-helmet"; // To modify head on each pages
-import Layout from "./layout";
+import Layout from "../components/Layout";
 import { TemperatureInput } from "../components/TemperatureInput";
 import styled, { ThemeProvider } from 'styled-components'
 import DividerStyles from '../components/styles/DividerStyles.js'
